@@ -1,10 +1,25 @@
 # PaisesApp
 
 Esta aplicacion usa la API de:
+
 ```
 https://restcountries.com/#api-endpoints-v3-full-name
 https://restcountries.com/v2
 ```
+
+## Actualizacion
+
+suscribe:
+` this.paisService.buscarPais(this.termino).subscribe({
+      next: (v) => {
+        console.log("Este es el next: ", v)
+      },
+      error: (e) => {
+        this.hayError = true;
+        console.error("Este es el error: ", e)
+      },
+      complete: () => console.info("Este es el complete: ", 'complete')
+    })`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
