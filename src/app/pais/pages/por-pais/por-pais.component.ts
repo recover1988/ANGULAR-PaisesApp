@@ -18,12 +18,13 @@ export class PorPaisComponent {
     this.hayError = false;
     console.log(this.termino)
     this.paisService.buscarPais(this.termino).subscribe({
-      next: (v) => {
-        console.log("Este es el next: ", v)
+      next: (resp) => {
+        console.log("Este es el next: ", resp)
+
       },
-      error: (e) => {
+      error: (err) => {
         this.hayError = true;
-        console.error("Este es el error: ", e)
+        console.error("Este es el error: ", err)
       },
       complete: () => console.info("Este es el complete: ", 'complete')
     })
