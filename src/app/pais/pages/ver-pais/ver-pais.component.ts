@@ -26,7 +26,10 @@ export class VerPaisComponent {
         switchMap(({ id }) => this.paisService.getPaisPorAlpha(id)),
         tap(console.log) // usa el observable que tiene adelentae
       )
-      .subscribe(pais => this.pais = pais[0])
+      .subscribe((paises: Country[]) => {
+        console.log('Este es: ', paises[0])
+        return this.pais = paises[0]
+      })
     // activatedRoute.params nos da mediante el subscribe le param que viene por el path dinamico de la ruta
     // this.activatedRoute.params
     //   .subscribe(({ id }) => {
