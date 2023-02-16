@@ -33,4 +33,9 @@ export class PorPaisComponent {
       complete: () => console.info("Este es el complete: ", 'complete')
     })
   }
+
+  sugerencias(termino:string){
+    this.hayError = false;
+    //TODO: crear sugerencias
+  }
 }
