@@ -22,19 +22,16 @@ export class PorPaisComponent {
 
     this.paisService.buscarPais(this.termino).subscribe({
       next: (paises) => {
-        console.log("Este es el next: ", paises)
         this.paises = paises
       },
       error: (err) => {
         this.hayError = true;
         this.paises = [];
-        console.error("Este es el error: ", err)
       },
-      complete: () => console.info("Este es el complete: ", 'complete')
     })
   }
 
-  sugerencias(termino:string){
+  sugerencias(termino: string) {
     this.hayError = false;
     //TODO: crear sugerencias
   }

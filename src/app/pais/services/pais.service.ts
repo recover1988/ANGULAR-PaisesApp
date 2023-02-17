@@ -11,7 +11,7 @@ export class PaisService {
 
   get httpParams() {
     return new HttpParams()
-      .set('fields', 'name,flags,population,cioc');
+      .set('fields', 'name,flags,population,cioc,capital');
 
   };
 
@@ -37,7 +37,7 @@ export class PaisService {
 
     return this.http.get<Country[]>(url, { params: this.httpParams })
       .pipe(
-        tap(console.log)
-      );
+      // tap(console.log)
+    );
   }
 }

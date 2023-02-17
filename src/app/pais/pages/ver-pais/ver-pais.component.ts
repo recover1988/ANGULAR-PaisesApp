@@ -24,10 +24,10 @@ export class VerPaisComponent {
     this.activatedRoute.params
       .pipe(
         switchMap(({ id }) => this.paisService.getPaisPorAlpha(id)),
-        tap(console.log) // usa el observable que tiene adelentae
+        // tap(console.log) // usa el observable que tiene adelentae
       )
       .subscribe((paises: Country[]) => {
-        console.log('Este es: ', paises[0])
+        // console.log('Este es: ', paises[0])
         return this.pais = paises[0]
       })
     // activatedRoute.params nos da mediante el subscribe le param que viene por el path dinamico de la ruta
